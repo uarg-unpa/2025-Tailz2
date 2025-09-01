@@ -1,5 +1,5 @@
 %Parte 1:
-%Base de hechos de Peliculas, Actores y Directores
+%Base de hechos de Peliculas, los actores y los directores
 
 pelicula(inception,ciencia_ficcion).
 pelicula(forrest_gump,drama).
@@ -48,4 +48,4 @@ director_de_genero(NombreDirector, Genero) :- director(NombreDirector, TituloPel
 pelicula_con_colaboracion(TituloPelicula) :-actor(NombreActor1, TituloPelicula),actor(NombreActor2, TituloPelicula),NombreActor1 \= NombreActor2.
 % Regla propia: es_famosa(TituloPelicula)
 % Una película es famosa si tiene un director y al menos un actor.
-es_famosa(TituloPelicula) :- director(_, TituloPelicula), actor(_, TituloPelicula).
+es_famosa(TituloPelicula) :- director(NombreDirector, TituloPelicula), actor(NombreActor, TituloPelicula).
