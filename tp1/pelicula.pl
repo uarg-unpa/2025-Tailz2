@@ -48,4 +48,4 @@ director_de_genero(NombreDirector, Genero) :- director(NombreDirector, TituloPel
 pelicula_con_colaboracion(TituloPelicula) :-actor(NombreActor1, TituloPelicula),actor(NombreActor2, TituloPelicula),NombreActor1 \= NombreActor2.
 % Regla propia: es_famosa(TituloPelicula)
 % Una película es famosa si tiene un director y al menos un actor.
-es_famosa(TituloPelicula) :- director(NombreDirector, TituloPelicula), actor(NombreActor, TituloPelicula).
+es_famosa(TituloPelicula) :- director(_NombreDirector, TituloPelicula), actor(_NombreActor, TituloPelicula).
