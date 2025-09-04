@@ -35,3 +35,15 @@ stock(harry_potter, 3).
 % Regla con aritmética y procedimiento
 precio_final(Titulo, Copias, Total) :- precio(Titulo, Precio), stock(Titulo, Stock), Stock >= Copias, Total is Precio * Copias.
 precio_final(Titulo, Copias, Total) :- \+ stock(Titulo, _), Total = no_disponible.
+
+% tercero: declarar predicados dinamicos
+%:- dynamic nombre_predicado /aridad
+:-dynamic libro/2.
+:-dynamic prestado/2.
+
+libro("el_principito", "antoine_de_saint_exupery").
+libro("1984", "george_orwell").
+prestado("el_principito", "juan").
+
+%Regla: Un libro esta disponible si no esta prestado
+disponible(Titulo):- libro(Titulo,_), \+ prestado(Titulo, _).
