@@ -47,3 +47,5 @@ prestado("el_principito", "juan").
 
 %Regla: Un libro esta disponible si no esta prestado
 disponible(Titulo):- libro(Titulo,_), \+ prestado(Titulo, _).
+
+%Consulta para ver todos los libros
