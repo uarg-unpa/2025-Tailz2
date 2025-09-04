@@ -26,6 +26,12 @@ generos_diferentes(T1,T2) :- pelicula(T1, G1), pelicula(T2,G2), G1 \= G2.
 %Negacion por fallo
 sin_stock(Titulo):- \+ stock(Titulo,_).
 
+%segundo hechos
+precio(el_principito, 60).
+precio(harry_potter, 45).
+stock(el_principito, 10).
+stock(harry_potter, 3).
+
 % Regla con aritmética y procedimiento
 precio_final(Titulo, Copias, Total) :- precio(Titulo, Precio), stock(Titulo, Stock), Stock >= Copias, Total is Precio * Copias.
 precio_final(Titulo, Copias, Total) :- \+ stock(Titulo, _), Total = no_disponible.
