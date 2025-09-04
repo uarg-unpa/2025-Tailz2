@@ -13,3 +13,15 @@ apto_promocion(Stock) :- Stock >= 10.
 bajo_stock(Stock) :- Stock =< 5.
 precio_correcto(Precio, Base, Imp) :- Precio =:= Base + Imp.
 precios_distintos(Precio1, Precio2) :- Precio1 =\= Precio2.
+
+stock(el_principito,10).
+libro_disponible_caro(Titulo, Precio, Stock) :- stock(Titulo, Stock), Precio > 50.
+
+clasificar_libro(Precio, Categoria) :- Precio > 50, Categoria = caro.
+clasificar_libro(Precio, Categoria) :- Precio =< 50, Categoria = economico.
+
+pelicula(inception, ficcion). pelicula(gump,drama).
+generos_diferentes(T1,T2) :- pelicula(T1, G1), pelicula(T2,G2), G1 \= G2.
+
+%Negacion por fallo
+sin_stock(Titulo):- \+ stock(Titulo,_).
