@@ -62,3 +62,4 @@ es_famosa(TituloPelicula) :- director(_, TituloPelicula), actor(_, TituloPelicul
 %c)Lista todas las peliculas y sus generos.
 % Consulta: ?- pelicula(TituloPelicula, Genero). 
 %Prolog me devuelve --> 
+%TituloPelicula = inception,Genero = ciencia_ficcion ;TituloPelicula = forrest_gump,Genero = drama ;TituloPelicula = jurassic_park,Genero = aventura ;TituloPelicula = titanic,Genero = drama ;TituloPelicula = pulp_fiction,Genero = crimen ;TituloPelicula = el_senor_de_los_anillos,Genero = aventura ;TituloPelicula = matrix,Genero = ciencia_ficcion ;TituloPelicula = gladiador,Genero = epica.
