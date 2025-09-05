@@ -64,11 +64,11 @@ sexo(russell_crowe, masculino).
 sexo(cate_blanchett, femenino).
 sexo(kate_winslet, femenino).
 
-% Nueva regla: actriz_en_pelicula(NombreActriz, TituloPelicula)
+% La nueva regla: actriz_en_pelicula(NombreActriz, TituloPelicula)
 % Una actriz actúa en una película si es un actor cuyo sexo es femenino.
 actriz_en_pelicula(NombreActriz, TituloPelicula) :- actor(NombreActriz, TituloPelicula), sexo(NombreActriz, femenino).
 
-%Salidas
+%Salidas correspondientes (con comentarios):
 
 %Parte 2: Consultas sobre hechos.
 
