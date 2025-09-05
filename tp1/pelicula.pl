@@ -54,8 +54,11 @@ es_famosa(TituloPelicula) :- director(_, TituloPelicula), actor(_, TituloPelicul
 %Salidas
 %Parte 2: Consultas sobre hechos.
 %a) ¿Cuáles peliculas dirige Christopher Nolan?
-% ?director(christopher_nolan, TituloPelicula).
+% Consulta: ?director(christopher_nolan, TituloPelicula).
 % Prolog me devuelve --> TituloPelicula = interestelar.
 %b) ¿Cuáles actúan en películas de ciencia ficción?
-%?pelicula(TituloPelicula, ciencia_ficcion), actor(NombreActor, TituloPelicula).
+% Consulta: ?pelicula(TituloPelicula, ciencia_ficcion), actor(NombreActor, TituloPelicula).
 %Prolog me devuelve --> TituloPelicula = inception, NombreActor = leonardo_dicaprio; TituloPelicula = matrix, NombreActor = keanu_reeves.
+%c)Lista todas las peliculas y sus generos.
+% Consulta: ?- pelicula(TituloPelicula, Genero). 
+%Prolog me devuelve --> 
