@@ -81,3 +81,8 @@ es_famosa(TituloPelicula) :- director(_, TituloPelicula), actor(_, TituloPelicul
 %Prolog devuelve --> Genero = ciencia_ficcion; Genero = Drama.
 %?colaboracion(leonardo_dicaprio, OtroActor).
 %Prolog devuelve --> false. Debido a que no hay actores que colaboren con leonardo di caprio.
+%?- colaboracion(samuel_l_jackson, OtroActor).
+%Prolog devuelve --> OtroActor = john_travolta.
+%Consulta para la regla propia:
+%?es_famosa(pelicula).
+%Prolog devuelve -->
