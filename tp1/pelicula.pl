@@ -53,13 +53,20 @@ es_famosa(TituloPelicula) :- director(_, TituloPelicula), actor(_, TituloPelicul
 
 %Salidas
 %Parte 2: Consultas sobre hechos.
-%a) ¿Cuáles peliculas dirige Christopher Nolan?
+% a) ¿Cuáles peliculas dirige Christopher Nolan?
 % Consulta: ?director(christopher_nolan, TituloPelicula).
 % Prolog me devuelve --> TituloPelicula = interestelar.
-%b) ¿Cuáles actúan en películas de ciencia ficción?
+% b) ¿Cuáles actúan en películas de ciencia ficción?
 % Consulta: ?pelicula(TituloPelicula, ciencia_ficcion), actor(NombreActor, TituloPelicula).
 %Prolog me devuelve --> TituloPelicula = inception, NombreActor = leonardo_dicaprio; TituloPelicula = matrix, NombreActor = keanu_reeves.
-%c)Lista todas las peliculas y sus generos.
+ %c)Lista todas las peliculas y sus generos.
 % Consulta: ?- pelicula(TituloPelicula, Genero). 
 %Prolog me devuelve --> 
 %TituloPelicula = inception,Genero = ciencia_ficcion ;TituloPelicula = forrest_gump,Genero = drama ;TituloPelicula = jurassic_park,Genero = aventura ;TituloPelicula = titanic,Genero = drama ;TituloPelicula = pulp_fiction,Genero = crimen ;TituloPelicula = el_senor_de_los_anillos,Genero = aventura ;TituloPelicula = matrix,Genero = ciencia_ficcion ;TituloPelicula = gladiador,Genero = epica.
+% d)¿Hay algún actor que actúe en Inception y en otra película? 
+% Consulta:?-actor(NombreActor,inception),actor(NombreActor,OtraPelicula), OtraPelicula\= inception. 
+%Prolog me devuelve --> OtraPelicula = titanic.
+%Consultas propias de la Parte 2:
+%¿Qué directores han dirigido a Tom Hanks?
+% Consulta: ?- director(NombreDirector, TituloPelicula), actor(tom_hanks, TituloPelicula)
+%Prolog me devuelve --> false.
