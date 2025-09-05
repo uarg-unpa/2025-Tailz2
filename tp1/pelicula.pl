@@ -66,7 +66,11 @@ es_famosa(TituloPelicula) :- director(_, TituloPelicula), actor(_, TituloPelicul
 % d)¿Hay algún actor que actúe en Inception y en otra película? 
 % Consulta:?-actor(NombreActor,inception),actor(NombreActor,OtraPelicula), OtraPelicula\= inception. 
 %Prolog me devuelve --> OtraPelicula = titanic.
+
 %Consultas propias de la Parte 2:
-%¿Qué directores han dirigido a Tom Hanks?
+%e)¿Qué directores han dirigido a Tom Hanks?
 % Consulta: ?- director(NombreDirector, TituloPelicula), actor(tom_hanks, TituloPelicula)
+%Prolog me devuelve --> false.
+%f)¿Existe alguna película que tenga los géneros de aventura y ciencia ficción?
+% Consulta: ?-pelicula(TituloPelicula, aventura), pelicula(TituloPelicula, ciencia_ficcion).
 %Prolog me devuelve --> false.
