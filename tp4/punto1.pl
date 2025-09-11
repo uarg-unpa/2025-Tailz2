@@ -1,6 +1,5 @@
+aleatorio:- numeros(1).
 %caso base
-numeros(X,10).
-aleatorio:- X is random(10), numeros(X,1).
-
+numeros(10):- X is random(10), write(X).
 %caso general
-numeros(X,C):- C < 10, C1 is C+1, X is random(10), write(X), numeros(X,C1).
+numeros(C):- C < 10, X is random(10), write(X), nl, C1 is C+1, numeros(C1).
