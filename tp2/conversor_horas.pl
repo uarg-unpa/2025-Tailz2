@@ -11,4 +11,4 @@ convertir_horas :-
 % Caso de error si no es número
 convertir_horas :-
     write('Error: Debe ingresar un numero valido (ej: 5.). Intente de nuevo.'), nl,
-    convertir_horas.  % Reintenta
+    convertir_horas.  % Reintenta la hora
