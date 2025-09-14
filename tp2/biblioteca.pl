@@ -45,6 +45,18 @@ listar_libros.  % Clausula vacía para terminar
 % Procedimiento para registrar un préstamo
 prestar(Titulo, Persona) :- disponible(Titulo), assertz(prestado(Titulo, Persona)).
 
-% Regla con aritmética y procedimiento
-precio_final(Titulo, Copias, Total) :- precio(Titulo, Precio), stock(Titulo, Stock), Stock >= Copias, Total is Precio * Copias.
-precio_final(Titulo, Copias, Total) :- \+ stock(Titulo, _), Total = no_disponible.
+eliminar_libro(Titulo) :-
+ libro(Titulo, _),
+ \+ prestado(Titulo, _),
+ retract(libro(Titulo, _)),
+ write('Libro eliminado: '), write(Titulo), nl.
+
+eliminar_libro(Titulo) :-
+ prestado(Titulo, _),
+ write('Error: Libro '), write(Titulo), write(' está prestado.'), nl,
+ fail. % Fuerza fracaso si está prestado
+ 
+eliminar_libro(Titulo) :-
+ \+ libro(Titulo, _),
+ write('Error: Libro '), write(Titulo), write(' no existe.'), nl,
+ fail. % Fuerza fracaso si no exi
