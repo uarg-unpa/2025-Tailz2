@@ -13,39 +13,3 @@ apto_promocion(Stock) :- Stock >= 10.
 bajo_stock(Stock) :- Stock =< 5.
 precio_correcto(Precio, Base, Imp) :- Precio =:= Base + Imp.
 precios_distintos(Precio1, Precio2) :- Precio1 =\= Precio2.
-
-stock(el_principito,10).
-libro_disponible_caro(Titulo, Precio, Stock) :- stock(Titulo, Stock), Precio > 50.
-
-clasificar_libro(Precio, Categoria) :- Precio > 50, Categoria = caro.
-clasificar_libro(Precio, Categoria) :- Precio =< 50, Categoria = economico.
-
-pelicula(inception, ficcion). pelicula(gump,drama).
-generos_diferentes(T1,T2) :- pelicula(T1, G1), pelicula(T2,G2), G1 \= G2.
-
-%Negacion por fallo
-sin_stock(Titulo):- \+ stock(Titulo,_).
-
-%segundo hechos
-precio(el_principito, 60).
-precio(harry_potter, 45).
-stock(el_principito, 10).
-stock(harry_potter, 3).
-
-% Regla con aritmética y procedimiento
-precio_final(Titulo, Copias, Total) :- precio(Titulo, Precio), stock(Titulo, Stock), Stock >= Copias, Total is Precio * Copias.
-precio_final(Titulo, Copias, Total) :- \+ stock(Titulo, _), Total = no_disponible.
-
-% tercero: declarar predicados dinamicos
-%:- dynamic nombre_predicado /aridad
-:-dynamic libro/2.
-:-dynamic prestado/2.
-
-libro("el_principito", "antoine_de_saint_exupery").
-libro("1984", "george_orwell").
-prestado("el_principito", "juan").
-
-%Regla: Un libro esta disponible si no esta prestado
-disponible(Titulo):- libro(Titulo,_), \+ prestado(Titulo, _).
-
-%Consulta para ver todos los libros
