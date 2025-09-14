@@ -59,4 +59,28 @@ eliminar_libro(Titulo) :-
 eliminar_libro(Titulo) :-
  \+ libro(Titulo, _),
  write('Error: Libro '), write(Titulo), write(' no existe.'), nl,
- fail. % Fuerza fracaso si no exi
+ fail. % Fuerza fracaso si no existe
+
+eliminar_prestamo(Titulo):- 
+    retract(prestamo(Titulo,_)), 
+    write("Prestamo eliminado: "), 
+    write(Titulo), nl, !.
+
+eliminar_prestamo(Titulo):-
+    write("No existe prestamo con el titulo"),
+    write(Titulo), nl.
+
+%Salidas
+
+%1) Basicamente se necesita el dynamic porque nos permite modificarlo en tiempo de ejecucion, de lo contrario, Prolog lo va a tratar como estático.
+%2)
+%?-eliminar_libro("1984").
+%Libro eliminado: 1984
+
+%?- eliminar_libro("el_principito").
+%Error: Libro el_principito está prestado.
+%false.
+
+%?- eliminar_prestamo("el_principito").
+%No existe prestamo con el tituloel_principito
+%true.
