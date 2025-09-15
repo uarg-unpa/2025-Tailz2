@@ -4,14 +4,31 @@
 %** 
 %***
 
-:-dynamic(triangulo/2).
+:-dynamic(triangulo/1).
 
-triangulo(N):- triangulo(N,1).
+% Predicado principal
+triangulo(N) :- triangulo(N, 1).
 
-%Caso base: si mi fila en la que me encuentro actualmente supera a N, termima
-triangulo(N,I):-
-    imprimir_estrella(I), nl,
-    I1 is I+1,
-    triangulo(N,I1).
+% Caso base: si la fila actual supera a N, se detiene
+triangulo(N, I) :- I =< N,
+    imprimir_estrellas(I),
+    nl,  % salto de línea
+    I1 is I + 1,
+    triangulo(N, I1).
+triangulo(_, I) :- I > 0.  % corte para evitar fallos innecesarios
 
-triangulo(_,1)
+% Predicado auxiliar para imprimir I estrellas
+imprimir_estrellas(0).
+imprimir_estrellas(N) :-
+    N > 0,
+    write('*'),
+    N1 is N - 1,
+    imprimir_estrellas(N1).
+
+
+%Salidas
+%?- triangulo(3).
+%*
+%**
+%***
+%true .
