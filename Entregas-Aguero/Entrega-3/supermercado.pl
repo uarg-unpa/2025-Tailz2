@@ -43,22 +43,22 @@ aumento_productos.
 %Producto: leche / Precio Nuevo: 262.5 / Categoria: e
 %true.
 
-%?- producto(N,P,C). Referencias --> N: Nombre, P: Precio y C: Categoria
-%N = yogurt,
-%P = 250,
-%C = g ;
-%N = azucar,
-%P = 150,
-%C = f ;
-%N = aceite,
-%P = 400,
-%C = h ;
-%N = arroz,
-%P = 157.5,
-%C = e ;
-%N = fideos,
-%P = 210.0,
-%C = e ;
-%N = leche,
-%P = 262.5,
-%C = e.
+%?- producto(Nombre,Precio,Categoria).
+%Nombre = arroz,
+%Precio = 150,
+%Categoria = e ;
+%Nombre = fideos,
+%Precio = 200,
+%Categoria = e ;
+%Nombre = leche,
+%Precio = 250,
+%Categoria = e ;
+%Nombre = yogurt,
+%Precio = 250,
+%Categoria = g ;
+%Nombre = azucar,
+%Precio = 150,
+%Categoria = f ;
+%Nombre = aceite,
+%Precio = 400,
+%Categoria = h.
