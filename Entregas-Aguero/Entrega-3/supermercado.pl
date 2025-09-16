@@ -19,7 +19,7 @@ producto(aceite, 400, h).
 %Caso General: Productos de categoria "e"
 aumento_productos:-
     producto(Nombre, Precio, e),
-    Precio_Nuevo is Precio * 1.05, % --> Le aplicamos el 5% de aumento
+    Precio_Nuevo is Precio * 1.05, % --> Le aplicamos el 5% de aumento (!.05 es)
     retract(producto(Nombre, Precio, e)), %%-> Eliminamos el hecho antiguo
     assert(producto(Nombre, Precio_Nuevo, e)), % Agregamos uno nuevo
     write('Producto: '),
