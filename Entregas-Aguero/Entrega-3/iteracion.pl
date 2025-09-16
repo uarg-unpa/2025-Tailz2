@@ -14,6 +14,7 @@ imprimir(X) :-
 %Ejercicio Adicional: Modifica para una tabla de multiplicación recursiva (TP4 ejercicio 2):
 %tabla(N, M) que imprima N*1 hasta N*10, usando recursión (caso base M=10).
 
+:- dynamic(tabla/2).
 %Caso base --> Cuando M llega a 10, imprime el ultimo numero y finaliza
 tabla(N,10):-
     R is N*10,
@@ -47,6 +48,9 @@ tabla(N,M):-
 %Explicacion del imprimir(1):
 %Esta regla lo que hace es generar un numero aleatorio, imprimiendolo y luego llega a "fin". 
 %Cuando llega a imprimir(1), el llamado recursivo termina. Utilizando el cut para no buscar mas soluciones al mismo.
+
+%Ejercicio adicional: En este caso, se relaciono el punto 2 con este mismo, con la diferencia de que se utilizó el cut
+%con el fin de finalizar la regla en vez de seguir buscando y realizando el backtracking.
 
 %Salida(Ejercicio Adicional):
 %?- tabla(6,1).
