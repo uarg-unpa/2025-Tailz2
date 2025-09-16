@@ -15,6 +15,7 @@ imprimir(X) :-
 %tabla(N, M) que imprima N*1 hasta N*10, usando recursión (caso base M=10).
 
 :- dynamic(tabla/2).
+
 %Caso base --> Cuando M llega a 10, imprime el ultimo numero y finaliza
 tabla(N,10):-
     R is N*10,
@@ -35,7 +36,7 @@ tabla(N,M):-
     M1 is M+1,
     tabla(N,M1).
 
-%Salidas
+%Salida del imprimir:
 %?- imprimir(5).
 %59
 %17
