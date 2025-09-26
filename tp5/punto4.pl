@@ -1,12 +1,13 @@
 %4. Escribir un programa que extraiga los últimos N caracteres de una lista y los coloque en otra lista
-ultimo(N,Lista,Lista):-
-    contar(Lista,N).
+% ultimos_n(+Lista, +N, -Ultimos)
+% Devuelve en Ultimos los últimos N elementos de Lista.
+ultimos_n(Lista, N, Ultimos) :-
+    integer(N), N >= 0,
+    length(Ultimos, N),
+    append(_, Ultimos, Lista).
 
-ultimo(N,[_|T],SubLista):-
-    ultimo(N,T,Sublista).
-
-contar([], 0).
-contar([_|T], N):-
-    N > 0,
-    N1 is N-1,
-    contar(T, N1).
+%Salidas:
+%?- ultimos_n([e,a,c,b,g], 2, R).
+%R = [b, g] ;
+%?- ultimos_n([1,2,3,4,5],5,R).
+%R = [1, 2, 3, 4, 5] ;
